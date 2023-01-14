@@ -1,5 +1,14 @@
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+import GlobalStyle from "../styles/global"
+
+
+
+export default function App({ Component, pageProps }) {
+  return (
+  <>
+    <GlobalStyle />
+    <Component {...pageProps} />
+  </>      
+  )
 }
 
-export default MyApp
