@@ -1,20 +1,19 @@
-import { createGlobalStyle } from 'styled-components';
-import { createStitches } from '@stitches/react';
+import { globalCss } from ".";
 
-export const { getCssText } = createStitches();
+export const globalStyles = globalCss({
+  '*': {
+    boxSizing: 'border-box',
+    padding: 0,
+    margin: 0,
+  },
 
-export const GlobalStyle = createGlobalStyle ({
-    '*': {
-      boxSizing: 'border-box',
-      padding: 0,
-      margin: 0,
-    },
-  
-    body: {
-      backgroundColor: '#121214',
-      color: '#E1E1E6',
-      '-webkit-font-smoothing': 'antialiased',
-    },
-  })
+  body: {
+    backgroundColor: '#121214',
+    color: '#E1E1E6',
+    '-webkit-font-smoothing': 'antialiased',
+  },
+})
 
-  export default GlobalStyle;
+
+
+export default globalStyles;
