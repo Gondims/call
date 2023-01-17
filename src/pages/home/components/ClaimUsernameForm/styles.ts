@@ -19,23 +19,29 @@ export const Form = styled(Box, {
     },
 })
 
-export const TextInput = styled('div', {
-    backgroundColor: '$gray900',
-    padding: '$3 $4',
-    borderRadius: '$sm',
-    boxSizing: 'border-box',
-    border: '2px solid $gray900',
-    display: 'flex',
-    alignItems: 'baseline',
 
-    '&:has(input:focus)': {
-        borderColor: '$ignite300',
-    },
+export const TextInput = styled('input', {
+  backgroundColor: '$gray900',
+  padding: '0 $4',
+  borderRadius: '$sm',
+  boxSizing: 'border-box',
+  border: '2px solid $gray900',
+  display: 'flex',
+  alignItems: 'baseline',
+  color: '$white',
 
-    '&:has(input:disabled)': {
-        opacity: 0.5,
-        cursor: 'not-allowed',
-    },
+  '&:focus': {
+    outline: 0,
+  },
+
+  '&:disabled': {
+    cursor: 'not-allowed',
+  },
+
+  '&:placeholder': {
+    color: '$gray400',
+  },
+
 })
 
 export const Button = styled('button', {
@@ -122,5 +128,41 @@ export const Button = styled('button', {
     defaultVariants: {
       variant: 'primary',
       size: 'md',
+    },
+  })
+  export const Text = styled('p', {
+    fontFamily: '$default',
+    lineHeight: '$base',
+    margin: 0,
+    color: '$gray100',
+  
+    variants: {
+      size: {
+        xxs: { fontSize: '$xxs' },
+        xs: { fontSize: '$xs' },
+        sm: { fontSize: '$sm' },
+        md: { fontSize: '$md' },
+        lg: { fontSize: '$lg' },
+        xl: { fontSize: '$xl' },
+        '2xl': { fontSize: '$2xl' },
+        '4xl': { fontSize: '$4xl' },
+        '5xl': { fontSize: '$5xl' },
+        '6xl': { fontSize: '$6xl' },
+        '7xl': { fontSize: '$7xl' },
+        '8xl': { fontSize: '$8xl' },
+        '9xl': { fontSize: '$9xl' },
+      },
+    },
+  
+    defaultVariants: {
+      size: 'md',
+    },
+  })
+  
+  export const FormAnnotation = styled('div', {
+    marginTop: '$2',
+  
+    [`> ${Text}`]: {
+      color: '$gray400',
     },
   })
