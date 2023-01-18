@@ -1,21 +1,23 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Heading, Text } from "../../styles/global"
-import { MultiStep } from "../../components/MultiStep"
-import { TextInput } from "../../components/TextInput"
+import { MultiStep, TextInput } from "../../components"
 import { ArrowRight } from 'phosphor-react'
 import { Container, Form, Header, FormError } from './styles'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 const registerFormSchema = z.object({
-  username: z.string()
+  username: z
+    .string()
     .min(3, { message: 'O usuário precisa ter pelo menos 3 letras.' })
     .regex(/^([a-z\\-]+)$/i, {
       message: 'O usuário pode ter apenas letras e hifens.',
     })
     .transform((username) => username.toLowerCase()),
-    
-  name: z.string()
+  name: z
+    .string()
     .min(3, { message: 'O nome precisa ter pelo menos 3 letras.' }),
 })
 
@@ -25,18 +27,28 @@ export default function Register() {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<RegisterFormData>({
     resolver: zodResolver(registerFormSchema),
   })
 
+  const router = useRouter()
+
+  useEffect(() => {
+    if (router.query.username) {
+      setValue('username', String(router.query.username))
+    }
+  }, [router.query?.username, setValue])
+
   function handleRegister(data: RegisterFormData) {
     console.log(data)
   }
+  
   return (
     <Container>
       <Header>
-        <Heading as="strong">Bem-vindo ao Gondim Call!</Heading>
+        <Heading as="strong">Bem-vindo ao Ignite Call!</Heading>
         <Text>
           Precisamos de algumas informações para criar seu perfil! Ah, você pode
           editar essas informações depois.
@@ -48,7 +60,12 @@ export default function Register() {
       <Form as="form" onSubmit={handleSubmit(handleRegister)}>
         <label>
           <Text size="sm">Nome de usuário</Text>
-          <TextInput prefix="gondim.com/" placeholder="seu-usuário" {...register('username')} />
+          <TextInput 
+           prefix="gondim.com/" 
+           placeholder="seu-usuário"
+           {...register('username')}
+          />
+
           {errors.username && (
             <FormError size="sm">{errors.username.message}</FormError>
           )}
@@ -56,9 +73,12 @@ export default function Register() {
 
         <label>
           <Text size="sm">Nome completo</Text>
-          <TextInput placeholder="Seu nome" {...register('name')} />
-          {errors.username && (
-            <FormError size="sm">{errors.username.message}</FormError>
+          <TextInput 
+            placeholder="Seu nome" 
+            {...register('name')}
+          />
+           {errors.name && (
+            <FormError size="sm">{errors.name.message}</FormError>
           )}
         </label>
 

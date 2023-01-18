@@ -1,5 +1,5 @@
-import { styled } from '../../styles'
-import { Text } from '../../styles/global'
+import { styled } from "../../styles"
+import { Text } from "../../styles/global"
 
 export const MultiStepContainer = styled('div', {})
 
