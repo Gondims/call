@@ -1,4 +1,6 @@
-import { Button, Text, TextInput, Form, FormAnnotation } from './styles'
+import { Form, FormAnnotation } from './styles'
+import { TextInput } from "../../../../components/TextInput"
+import { Button, Text } from "../../../../styles/global"
 import { ArrowRight } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -28,6 +30,7 @@ export function ClaimUsernameForm() {
     <>
       <Form as="form" onSubmit={handleSubmit(handleClaimUsername)}>
         <TextInput
+          prefix="gondim.com/"
           placeholder="seu-usuário"
           {...register('username')}
         />

@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { Container, Hero, Preview, Heading, Text } from './styles'
+import { Container, Hero, Preview } from './styles'
+import { Heading, Text  } from "../../styles/global"
 import { ClaimUsernameForm } from './components/ClaimUsernameForm'
 
 
