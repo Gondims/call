@@ -1,5 +1,5 @@
 import { Form, FormAnnotation } from './styles'
-import { TextInput } from "../../../../components"
+import { TextInput } from "../../../../styles/components"
 import { Button, Text } from "../../../../styles/global"
 import { ArrowRight } from 'phosphor-react'
 import { useForm } from 'react-hook-form'

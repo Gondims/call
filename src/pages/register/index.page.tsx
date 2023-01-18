@@ -1,6 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Heading, Text } from "../../styles/global"
-import { MultiStep, TextInput } from "../../components"
+import { MultiStep, TextInput } from "../../styles/components"
 import { ArrowRight } from 'phosphor-react'
 import { Container, Form, Header, FormError } from './styles'
 import { useForm } from 'react-hook-form'
@@ -44,7 +44,7 @@ export default function Register() {
   function handleRegister(data: RegisterFormData) {
     console.log(data)
   }
-  
+
   return (
     <Container>
       <Header>
