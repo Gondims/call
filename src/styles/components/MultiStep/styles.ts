@@ -19,7 +19,7 @@ export const Steps = styled('div', {
 })
 
 export const Step = styled('div', {
-  height: '$1',
+  height: '0.25rem',
   borderRadius: '$px',
   backgroundColor: '$gray600',
 

@@ -54,7 +54,7 @@ export const {
       shorter: '125%',
       short: '140%',
       base: '160%',
-      tall: '180%',
+      tall: '180%'
     },
 
     fontWeights: {
@@ -71,6 +71,7 @@ export const {
       lg: '16px',
       full: '99999px',
     },
+    
     space: {
       1: '0.25rem',
       2: '0.5rem',
