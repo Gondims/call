@@ -1,5 +1,5 @@
 
-import { Box } from '../../../styles/global'
+import { Box, Text } from '../../../styles/global'
 import { styled } from "../../../styles";
 
 export const IntervalBox = styled(Box, {
@@ -39,4 +39,9 @@ export const IntervalBox = styled(Box, {
     'input::-webkit-calendar-picker-indicator': {
       filter: 'invert(100%) brightness(40%)',
     },
+  })
+
+  export const FormError = styled(Text, {
+    color: '#f75a68',
+    marginBottom: '$4',
   })
