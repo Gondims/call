@@ -1,4 +1,5 @@
 import { Button, Heading, Text } from "../../../styles/global";
+import { api } from '../../../lib/axios'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MultiStep, TextInput, Checkbox } from "../../../styles/components";
 import { ArrowRight } from "phosphor-react";
@@ -88,7 +89,9 @@ export default function TimeIntervals() {
   const intervals = watch("intervals");
 
   async function handleSetTimeIntervals(data: TimeIntervalsFormOutput) {
-    console.log(data)
+    await api.post('/users/time-intervals', {
+      intervals,
+    })
   }
 
   return (
