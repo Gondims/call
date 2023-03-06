@@ -8,6 +8,7 @@ import { convertTimeStringToMinutes } from '../../../utils/convert-time-string-t
 import { z } from "zod";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
 import { getWeekDays } from "../../../utils/get-week-days";
+import { useRouter } from 'next/router'
 import {
   FormError,
   IntervalBox,
@@ -80,6 +81,7 @@ export default function TimeIntervals() {
     },
   });
   const weekDays = getWeekDays();
+  const router = useRouter()
 
   const { fields } = useFieldArray({
     control,
@@ -88,10 +90,14 @@ export default function TimeIntervals() {
 
   const intervals = watch("intervals");
 
-  async function handleSetTimeIntervals(data: TimeIntervalsFormOutput) {
+  async function handleSetTimeIntervals(data: any) {
+    const { intervals } = data as TimeIntervalsFormOutput
+
     await api.post('/users/time-intervals', {
       intervals,
     })
+
+    await router.push('/register/update-profile')
   }
 
   return (
