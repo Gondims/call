@@ -56,10 +56,10 @@ const updateProfileSchema = z.object({
           <label>
             <Text>Foto de perfil</Text>
             <Avatar
-            src={session.data?.user.avatar_url}
-            referrerPolicy="no-referrer"
-            alt={session.data?.user.name}
-          />
+              src={session.data?.user.avatar_url}
+              referrerPolicy="no-referrer"
+              alt={session.data?.user.name}
+            />
           </label>
   
           <label>
