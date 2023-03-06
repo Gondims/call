@@ -3,7 +3,7 @@ import { prisma } from '../../../lib/prisma'
 import { Heading, Text } from "../../../styles/global"
 import { Avatar } from "../../../styles/components"
 import { Container, UserHeader } from './styles'
-
+import { ScheduleForm } from './ScheduleForm'
 interface ScheduleProps {
   user: {
     name: string
@@ -20,6 +20,7 @@ export default function Schedule({ user }: ScheduleProps) {
         <Heading>{user.name}</Heading>
         <Text>{user.bio}</Text>
       </UserHeader>
+      <ScheduleForm />
     </Container>
   )
 }
