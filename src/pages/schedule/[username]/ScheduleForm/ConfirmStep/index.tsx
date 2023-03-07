@@ -5,6 +5,7 @@ import { ConfirmForm, FormActions, FormError, FormHeader } from './styles'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import dayjs from 'dayjs'
 
 const confirmFormSchema = z.object({
     name: z.string().min(3, { message: 'O nome precisa no mínimo 3 caracteres' }),
