@@ -13,6 +13,7 @@ import { Button, Heading, Text } from "../../../styles/global"
 import { Container, Header } from '../styles'
 import { FormAnnotation, ProfileBox } from './styles'
 import { buildNextAuthOptions } from '../../api/auth/[...nextauth].api'
+import { NextSeo } from 'next-seo'
 
 const updateProfileSchema = z.object({
     bio: z.string(),
@@ -41,6 +42,8 @@ const updateProfileSchema = z.object({
     }
   
     return (
+      <>
+      <NextSeo title="Atualize seu perfil | Call" noindex />
       <Container>
         <Header>
           <Heading as="strong">Bem-vindo ao Ignite Call!</Heading>
@@ -76,6 +79,7 @@ const updateProfileSchema = z.object({
           </Button>
         </ProfileBox>
       </Container>
+      </>
     )
   }
   

@@ -9,6 +9,7 @@ import { z } from 'zod'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { api } from '../../lib/axios'
+import { NextSeo } from 'next-seo'
 
 const registerFormSchema = z.object({
   username: z
@@ -59,9 +60,11 @@ export default function ConnectCalendar() {
   }
 
   return (
+    <>
+      <NextSeo title="Crie uma conta | Call" />
     <Container>
       <Header>
-        <Heading as="strong">Bem-vindo ao Ignite Call!</Heading>
+        <Heading as="strong">Bem-vindo ao Call!</Heading>
         <Text>
           Precisamos de algumas informações para criar seu perfil! Ah, você pode
           editar essas informações depois.
@@ -101,5 +104,6 @@ export default function ConnectCalendar() {
         </Button>
       </Form>
     </Container>
+    </>
   )
 }

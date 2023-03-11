@@ -2,6 +2,7 @@ import { Button, Heading, Text } from "../../../styles/global"
 import { MultiStep } from "../../../styles/components"
 import { ArrowRight, Check } from 'phosphor-react'
 // import { api } from "../../../lib/axios"
+import { NextSeo } from 'next-seo'
 import { signIn, useSession } from 'next-auth/react'
 import { Container, Header } from '../styles'
 import { AuthError, ConnectBox, ConnectItem } from './styles'
@@ -23,6 +24,8 @@ export default function Register() {
   }
 
   return (
+    <>
+    <NextSeo title="Conecte sua agenda do Google | Call" noindex />
     <Container>
       <Header>
         <Heading as="strong">Conecte sua agenda!</Heading>
@@ -71,5 +74,6 @@ export default function Register() {
         </Button>
       </ConnectBox>
     </Container>
+    </>
   )
 }

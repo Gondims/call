@@ -9,6 +9,7 @@ import { z } from "zod";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
 import { getWeekDays } from "../../../utils/get-week-days";
 import { useRouter } from 'next/router'
+import { NextSeo } from 'next-seo'
 import {
   FormError,
   IntervalBox,
@@ -101,6 +102,8 @@ export default function TimeIntervals() {
   }
 
   return (
+    <>
+    <NextSeo title="Selecione sua disponibilidade | Call" noindex />
     <Container>
       <Header>
         <Heading as="strong">Quase lá</Heading>
@@ -165,5 +168,6 @@ export default function TimeIntervals() {
         </Button>
       </IntervalBox>
     </Container>
+    </>
   );
 }
