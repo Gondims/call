@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { unstable_getServerSession } from 'next-auth'
+import { Session, unstable_getServerSession } from 'next-auth'
 import { buildNextAuthOptions } from '../auth/[...nextAuth].api'
 import { z } from 'zod'
 import { prisma } from '../../../lib/prisma'
@@ -26,7 +26,7 @@ export default async function handler(
     req,
     res,
     buildNextAuthOptions(req, res),
-  )
+  )as Session | null
 
   if(!session){
     return res.status(401).end()
