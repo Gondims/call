@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { unstable_getServerSession } from 'next-auth'
+import { Session, unstable_getServerSession } from 'next-auth'
+
 import { z } from 'zod'
 import { prisma } from '../../../lib/prisma'
 import { buildNextAuthOptions } from '../auth/[...nextAuth].api'
@@ -20,11 +21,12 @@ export default async function handler(
     req,
     res,
     buildNextAuthOptions(req, res),
-  )
+  ) as Session | null
 
   if (!session) {
     return res.status(401).end()
   }
+
 
   const { bio } = updateProfileBodySchema.parse(req.body)
 
