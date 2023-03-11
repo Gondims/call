@@ -21,7 +21,7 @@ export default function App({
             type: 'website',
             locale: 'pt_BR',
             url: 'https://www.call.agendamentodescomplicado.com.br',
-            siteName: 'Ignite Call',
+            siteName: 'Call',
           }}
         />
         <Component {...pageProps} />
