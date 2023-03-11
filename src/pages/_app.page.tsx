@@ -20,7 +20,7 @@ export default function App({
           openGraph={{
             type: 'website',
             locale: 'pt_BR',
-            url: 'https://www.ignite-call.rocketseat.com.br',
+            url: 'https://www.call.agendamentodescomplicado.com.br',
             siteName: 'Ignite Call',
           }}
         />
