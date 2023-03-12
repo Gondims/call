@@ -12,7 +12,7 @@ import { MultiStep, TextArea, Avatar } from "../../../styles/components";
 import { Button, Heading, Text } from "../../../styles/global"
 import { Container, Header } from '../styles'
 import { FormAnnotation, ProfileBox } from './styles'
-import { buildNextAuthOptions } from '../../api/auth/[...nextAuth].api'
+import { buildNextAuthOptions } from '../../api/auth/[...nextauth].api'
 import { NextSeo } from 'next-seo'
 
 const updateProfileSchema = z.object({
